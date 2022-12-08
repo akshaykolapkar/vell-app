@@ -2,14 +2,14 @@ pipeline {
  agent {
    label {
            label 'built-in'
-           customWorkspace "/data/vel-app"
+           customWorkspace "/data/projects/vel-app"
 }
 }
 
    stages {
              stage ('install-apache') {
                  steps {
-                       sh "service httpd start"
+                       sh "yum install httpd -y"
                     }
               }
 
